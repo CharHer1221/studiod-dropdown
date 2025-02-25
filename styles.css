@@ -1,0 +1,49 @@
+/* General Reset */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #371cd3; /* Deep Blue-Purple */
+    margin: 0;
+}
+
+/* Fan Container */
+.fan {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+/* Base Style for SVG Links */
+.d {
+    position: absolute;
+    width: 100px; /* Adjust size */
+    height: auto;
+    transform-origin: bottom left; /* LOCK bottom-left corner */
+    opacity: 1;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Remove link styling */
+.d img {
+    width: 150%; /* Ensure the image fits the size */
+    height: auto;
+    display: block;
+}
+
+/* Control Layering - White Always on Top */
+.white  { z-index: 5; }
+.pink   { z-index: 4; }
+.cyan   { z-index: 3; }
+.yellow { z-index: 2; }
+.black  { z-index: 1; }
+
+/* 🔁 First Hover Effect (Fan Out - No Scaling) */
+.fan:hover .white  { transform: rotate(0deg); }  /* Stays in place */
+.fan:hover .pink   { transform: rotate(25deg); }
+.fan:hover .cyan   { transform: rotate(50deg); }
+.fan:hover .yellow { transform: rotate(70deg); }
+.fan:hover .black  { transform: rotate(100deg); }  /* Completely upside down */
+
